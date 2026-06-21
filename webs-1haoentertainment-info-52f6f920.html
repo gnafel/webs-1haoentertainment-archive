@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>壹号娱乐 · 稳定入口与页面说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #f1f4f8;
+            color: #1e293b;
+            line-height: 1.6;
+            padding: 1.8rem 1rem;
+        }
+
+        .page-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* 卡片通用设计 */
+        .card {
+            background: #ffffff;
+            border-radius: 1.25rem;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02), 0 1px 3px rgba(0, 0, 0, 0.03);
+            padding: 2rem 2.2rem;
+            transition: box-shadow 0.15s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04), 0 2px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        /* HERO 区 */
+        .hero-card {
+            background: #ffffff;
+            border-radius: 1.75rem;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.02);
+            padding: 3.2rem 2.8rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .hero-card h1 {
+            font-size: 2.4rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: #0b1a2f;
+            margin-bottom: 0.6rem;
+        }
+
+        .hero-card .sub {
+            font-size: 1.15rem;
+            color: #475569;
+            max-width: 720px;
+            margin: 0 auto 1.2rem auto;
+            line-height: 1.7;
+        }
+
+        .hero-card .meta-badge {
+            display: inline-block;
+            background: #f1f5f9;
+            padding: 0.35rem 1rem;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            color: #334155;
+            border: 1px solid #e2e8f0;
+        }
+
+        /* 网格布局 */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.8rem;
+            margin-bottom: 2rem;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1.8rem;
+            margin-bottom: 2rem;
+        }
+
+        .card h2 {
+            font-size: 1.45rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #0f172a;
+            letter-spacing: -0.01em;
+            border-bottom: 2px solid #eef2f6;
+            padding-bottom: 0.45rem;
+        }
+
+        .card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin: 0.8rem 0 0.4rem;
+        }
+
+        .card p, .card li {
+            color: #334155;
+            font-size: 0.98rem;
+        }
+
+        .card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .card ul li {
+            position: relative;
+            padding-left: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .card ul li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: #94a3b8;
+        }
+
+        .badge-light {
+            display: inline-block;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 24px;
+            padding: 0.2rem 0.9rem;
+            font-size: 0.8rem;
+            color: #475569;
+            margin-right: 0.35rem;
+        }
+
+        .faq-item {
+            margin-bottom: 0.9rem;
+        }
+
+        .faq-item strong {
+            display: block;
+            font-weight: 600;
+            color: #0f172a;
+            margin-bottom: 0.2rem;
+        }
+
+        .faq-item p {
+            margin: 0.1rem 0 0 0.1rem;
+            color: #475569;
+        }
+
+        .footer-links {
+            margin-top: 2rem;
+            padding: 1.5rem 0 0.8rem;
+            border-top: 1px solid #e2e8f0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-links .copy {
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a {
+            color: #1e293b;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.15s;
+        }
+
+        .footer-links a:hover {
+            border-bottom-color: #94a3b8;
+        }
+
+        .inline-link {
+            color: #1e293b;
+            font-weight: 500;
+            text-decoration: none;
+            border-bottom: 1px solid #cbd5e1;
+            transition: border-color 0.15s, color 0.15s;
+        }
+
+        .inline-link:hover {
+            color: #0f172a;
+            border-bottom-color: #64748b;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: #e2e8f0;
+            margin: 1.8rem 0;
+        }
+
+        /* 响应式 */
+        @media (max-width: 840px) {
+            .grid-2, .grid-3 {
+                grid-template-columns: 1fr;
+                gap: 1.4rem;
+            }
+
+            .hero-card {
+                padding: 2rem 1.4rem;
+            }
+
+            .hero-card h1 {
+                font-size: 1.9rem;
+            }
+
+            .card {
+                padding: 1.5rem 1.2rem;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 1rem 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrapper">
+
+    <!-- HERO 区 -->
+    <div class="hero-card">
+        <h1>壹号娱乐 · 稳定入口</h1>
+        <div class="sub">
+            聚焦页面结构、访问逻辑与基础说明，从入口到内容保持清晰可溯。<br>
+            不依赖跳转捷径，只提供一致且可预期的浏览路径。
+        </div>
+        <div class="meta-badge">当前版本 · 页面说明方向</div>
+    </div>
+
+    <!-- 优势区：两列 -->
+    <div class="grid-2">
+        <div class="card">
+            <h2>入口特性</h2>
+            <ul>
+                <li>直接连接目标资源，减少中间重定向次数。</li>
+                <li>域名结构长期稳定，避免频繁变更带来的认知成本。</li>
+                <li>页面响应时间保持在合理区间，适用于常规网络环境。</li>
+                <li>不嵌入第三方跟踪脚本，仅保留必要页面描述。</li>
+            </ul>
+            <div style="margin-top: 1rem;">
+                <span class="badge-light">HTTP 直连</span>
+                <span class="badge-light">无中间页</span>
+                <span class="badge-light">固定路径</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>内容说明</h2>
+            <p style="margin-bottom: 0.6rem;">
+                页面以信息承载为主，不包含自动播放媒体或强制交互组件。所有可操作元素均带有明确文字标识。
+            </p>
+            <p>
+                文本段落采用中性语气，不渲染紧迫感。每个区块均围绕「稳定访问」这一前提展开，方便用户快速评估页面用途。
+            </p>
+            <hr style="margin: 1rem 0;">
+            <p style="font-size: 0.92rem; color: #475569;">
+                <strong>示例链接：</strong> 了解更详细的服务介绍，可参阅 <a href="https://webs-1haoentertainment.com" class="inline-link">壹号娱乐</a> 的主页内容。
+            </p>
+        </div>
+    </div>
+
+    <!-- 说明区 / 场景适配：三列 -->
+    <div class="grid-3">
+        <div class="card">
+            <h2>浏览场景</h2>
+            <ul>
+                <li>信息查阅与内容概览</li>
+                <li>功能入口识别与路径判断</li>
+                <li>跨设备访问（桌面 / 平板 / 手机）</li>
+                <li>低带宽环境下的基础加载</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h2>结构提示</h2>
+            <p>本页面采用语义化分区： hero 区概述定位，信息区细化条目，FAQ 摘要提供快速解答。</p>
+            <p style="margin-top: 0.6rem;">所有外部链接均以 <code>https://</code> 开头，且经过基础可达性校验。</p>
+        </div>
+        <div class="card">
+            <h2>技术说明</h2>
+            <ul>
+                <li>HTML 语义标签 + 纯 CSS 布局</li>
+                <li>无 JavaScript 依赖</li>
+                <li>卡片式分区，细边框 · 柔和阴影</li>
+                <li>响应式断点 840px / 480px</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="card" style="margin-bottom: 1rem;">
+        <h2>FAQ 摘要</h2>
+        <div class="faq-item">
+            <strong>Q: 如何确认当前访问的是稳定入口？</strong>
+            <p>地址栏域名应为 <code>webs-1haoentertainment.com</code>，并采用 HTTPS 协议。页面底部无异常跳转链接。</p>
+        </div>
+        <div class="faq-item">
+            <strong>Q: 页面内容是否定期更新？</strong>
+            <p>说明类信息根据服务状态调整，入口本身保持固定。建议定期访问 <a href="https://webs-1haoentertainment.com" class="inline-link">壹号娱乐</a> 以获取最新动态。</p>
+        </div>
+        <div class="faq-item">
+            <strong>Q: 是否支持第三方客户端调用？</strong>
+            <p>本页面为信息展示用途，无公开 API 端点。若需集成，请参考主站提供的说明文档。</p>
+        </div>
+    </div>
+
+    <!-- 底部链接 -->
+    <div class="footer-links">
+        <div class="copy">
+            © 页面说明 · 稳定入口
+        </div>
+        <div>
+            <a href="https://webs-1haoentertainment.com">壹号娱乐</a>
+            <span style="margin: 0 0.6rem; color: #cbd5e1;">|</span>
+            <a href="#" style="pointer-events: none; opacity: 0.5; text-decoration: none;">关于说明</a>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

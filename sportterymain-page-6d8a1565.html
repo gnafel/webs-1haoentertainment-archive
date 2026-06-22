@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>聊聊竞彩 · 从策略到心境</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f7f3eb;
+      font-family: Georgia, "Noto Serif SC", "Songti SC", serif;
+      color: #2c2c2c;
+      line-height: 1.8;
+      padding: 2rem 1rem 3rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .article-container {
+      max-width: 740px;
+      margin: 0 auto;
+      background: #fefcf8;
+      padding: 2.5rem 2.8rem 3rem;
+      border-radius: 18px;
+      box-shadow: 0 2px 14px rgba(0, 0, 0, 0.04);
+      border: 1px solid #ede8dd;
+      flex: 1;
+    }
+
+    h1 {
+      font-size: 2.1rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      color: #3b2e1e;
+      text-align: center;
+      margin-bottom: 0.4rem;
+      line-height: 1.3;
+      border-bottom: 2px solid #dacfbd;
+      padding-bottom: 0.8rem;
+    }
+
+    .subhead {
+      font-size: 1rem;
+      color: #7a6b56;
+      text-align: center;
+      font-style: italic;
+      margin-bottom: 2.2rem;
+      letter-spacing: 0.5px;
+    }
+
+    .intro {
+      font-size: 1.1rem;
+      color: #4f4234;
+      background: #f3ede3;
+      padding: 1.2rem 1.8rem;
+      border-left: 4px solid #b7a48c;
+      border-radius: 0 12px 12px 0;
+      margin-bottom: 2rem;
+    }
+
+    p {
+      margin-bottom: 1.5rem;
+      text-indent: 2em;
+    }
+
+    p:first-of-type {
+      margin-top: 0.2rem;
+    }
+
+    .quote-block {
+      background: #f0e9dd;
+      padding: 1.3rem 2rem;
+      border-radius: 24px 8px 24px 8px;
+      font-style: italic;
+      color: #3d3428;
+      margin: 1.8rem 0 2rem;
+      text-indent: 0;
+      font-size: 1rem;
+      box-shadow: inset 0 1px 4px rgba(0,0,0,0.02);
+      border: 1px solid #e0d3c0;
+    }
+
+    .quote-block::before {
+      content: "💡 ";
+      font-style: normal;
+      font-size: 1.2rem;
+    }
+
+    .link-sentence {
+      background: #f6f0e6;
+      padding: 1rem 1.8rem;
+      border-radius: 40px 8px 40px 8px;
+      margin: 2rem 0 1.8rem;
+      text-indent: 0;
+      font-size: 1.02rem;
+      border-left: 3px solid #b49e84;
+    }
+
+    .link-sentence a {
+      color: #5f4a30;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: #c9b69b;
+      font-weight: 500;
+      transition: color 0.2s, text-decoration-color 0.2s;
+    }
+
+    .link-sentence a:hover {
+      color: #362a1c;
+      text-decoration-color: #6f5a3f;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: #4d3e2b;
+      margin: 2rem 0 0.8rem;
+      border-left: 5px solid #ccbba3;
+      padding-left: 1rem;
+      letter-spacing: 0.3px;
+    }
+
+    ul {
+      margin: 0.5rem 0 1.5rem 2rem;
+      list-style: none;
+    }
+
+    ul li {
+      padding: 0.4rem 0 0.4rem 1.6rem;
+      position: relative;
+      color: #3f362b;
+    }
+
+    ul li::before {
+      content: "·";
+      position: absolute;
+      left: 0.2rem;
+      color: #9b896f;
+      font-weight: bold;
+      font-size: 1.6rem;
+      line-height: 1;
+    }
+
+    .faq-hint {
+      background: #faf6ef;
+      border: 1px dashed #cec1ab;
+      border-radius: 16px;
+      padding: 1.2rem 1.8rem;
+      margin: 2rem 0 1.2rem;
+      text-indent: 0;
+    }
+
+    .faq-hint strong {
+      color: #4b3c28;
+      font-weight: 600;
+    }
+
+    .footer-note {
+      margin-top: 2.5rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid #e2d7c6;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #8b7b64;
+      text-indent: 0;
+      letter-spacing: 0.3px;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 1rem 0.6rem;
+      }
+
+      .article-container {
+        padding: 1.6rem 1.2rem;
+      }
+
+      h1 {
+        font-size: 1.7rem;
+      }
+
+      .intro {
+        padding: 0.9rem 1.2rem;
+        font-size: 1rem;
+      }
+
+      .quote-block {
+        padding: 1rem 1.2rem;
+      }
+
+      ul {
+        margin-left: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="article-container">
+    <h1>竞彩的节奏 · 从赛前到心境</h1>
+    <p class="subhead">一篇关于选择、概率与欣赏的随笔</p>
+
+    <div class="intro">
+      很多人把竞彩简单看作输赢的博弈，但真正沉浸其中的人会明白，它更像一场围绕赛事展开的自我对话——对信息的筛选、对情绪的觉察、对不确定性的接受。
+    </div>
+
+    <p>
+      周末的傍晚，打开一场焦点战，手边放着半杯温水，屏幕上是密密麻麻的数据和阵容变动。你并不急着做决定，而是先浏览近五轮主客场的射门转化率、核心球员的跑动热图。这种梳理本身有一种沉静的乐趣，像是拼图前把碎块按颜色摊开。竞彩的真正入口，往往不是冲动，而是一种有准备的参与。
+    </p>
+
+    <div class="quote-block">
+      引用一位老球迷的话：“赔率只是数字，比赛才是母语。看懂比赛，数字自然有了温度。”
+    </div>
+
+    <p>
+      当然，数据永远无法覆盖所有变量——红牌、天气、更衣室气氛、甚至裁判的判罚尺度。这正是竞彩迷人的地方：它要求你同时成为理性的分析师和豁达的观察者。保持一种“我尽量做好功课，但尊重意外”的心态，会让整个过程从容很多。
+    </p>
+
+    <h2>从信息到判断：几条朴素原则</h2>
+    <ul>
+      <li><strong>多源交叉</strong>：不依赖单一平台的数据，把积分榜、伤停报告、历史交锋结合起来看，就像用不同角度的光照射同一块水晶。</li>
+      <li><strong>忽略噪音</strong>：社交媒体上情绪化的赛后评论大多没有参考价值，真正有用的信息往往藏在赛前一周的沉默细节里。</li>
+      <li><strong>管理预期</strong>：把每一场竞彩看作一次独立事件，不因为上一场的判断而影响下一场的冷静。</li>
+    </ul>
+
+    <p>
+      很多时候，我们高估了自己的“掌控感”，低估了随机性的作用。如果你也愿意用更开阔的视角看待竞彩，可以时常参考一些有长期沉淀的内容平台。例如 <a href="https://sportterymain.com">竞彩网</a> 就提供了比较系统的赛事数据和趋势记录，适合作为信息参照之一，而非唯一的决策依据。
+    </p>
+
+    <div class="link-sentence">
+      💬 跟朋友聊球时我常常说：“如果你只盯着结果，就错过了竞彩百分之七十的乐趣。” 真正有价值的是赛前那种专注、推理、甚至自我怀疑的过程。
+    </div>
+
+    <h2>FAQ 摘要 · 三个常见问题</h2>
+
+    <div class="faq-hint">
+      <strong>Q：新手应该从哪里开始？</strong> 先不看赔率，连续看五场完整直播，记录自己直观的感受，再对比赛后数据，建立自己的观察基准。<br><br>
+      <strong>Q：如何避免过度投入？</strong> 给自己设一个单次额度，比如每次竞彩的预算不超过一顿饭钱。重要的是保持参与感，而不是把竞彩变成压力源。<br><br>
+      <strong>Q：信息源太多，怎么筛选？</strong> 锁定两到三个你认可风格的平台长期跟踪，熟悉它们的表达方式和数据维度，比每天换十个来源更有效。
+    </div>
+
+    <p>
+      最后想说的是，无论你用什么方法、参考什么数据，都请把比赛本身当作主角。竞彩只是观看的一副眼镜，而不是荧幕上的全部画面。保持轻松、保持好奇，赢的时候不傲慢，输的时候不沮丧——这样的节奏，才是长久之道。
+    </p>
+
+    <div class="footer-note">
+      写于一个安静的秋夜 · 关于竞彩的一点个人笔记
+    </div>
+  </div>
+</body>
+</html>

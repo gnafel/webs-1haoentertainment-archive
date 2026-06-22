@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>竞彩网 · 杂志专题</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background-color: #f5f3f0;
+            color: #1e1e2a;
+            line-height: 1.6;
+            letter-spacing: 0.01em;
+        }
+        .wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* 深色头图 hero */
+        .hero {
+            background: linear-gradient(145deg, #0f1119 0%, #1c1f2b 60%, #242837 100%);
+            color: #e9e7e0;
+            padding: 80px 0 70px;
+            margin: 0 -24px;
+            border-radius: 0 0 52px 52px;
+            text-align: center;
+            box-shadow: 0 12px 28px rgba(0,0,0,0.18);
+        }
+        .hero-content {
+            max-width: 780px;
+            margin: 0 auto;
+        }
+        .hero-tag {
+            display: inline-block;
+            background: rgba(255, 195, 0, 0.15);
+            color: #f7cd5e;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 1.2px;
+            padding: 6px 18px;
+            border-radius: 40px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(247, 205, 94, 0.25);
+        }
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 650;
+            line-height: 1.2;
+            margin-bottom: 18px;
+            background: linear-gradient(to right, #f7e7c2, #f9d97a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            color: #c8c6d4;
+            max-width: 620px;
+            margin: 0 auto;
+            font-weight: 350;
+        }
+        .hero a {
+            color: #f7cd5e;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            transition: color 0.2s;
+        }
+        .hero a:hover {
+            color: #ffe185;
+        }
+
+        /* 浅色正文区 */
+        .main {
+            padding: 56px 0 60px;
+        }
+
+        /* 杂志式卡片网格 */
+        .card-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 44px;
+            margin-bottom: 80px;
+        }
+        .card-item {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            gap: 30px 40px;
+            background: #ffffff;
+            padding: 32px 36px;
+            border-radius: 28px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.02), 0 1px 4px rgba(0, 0, 0, 0.04);
+            transition: box-shadow 0.25s;
+        }
+        .card-item:hover {
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.04);
+        }
+        .card-num {
+            flex: 0 0 60px;
+            font-size: 2rem;
+            font-weight: 300;
+            color: #b4b1c2;
+            line-height: 1;
+        }
+        .card-text {
+            flex: 1;
+            min-width: 240px;
+        }
+        .card-text h2 {
+            font-size: 1.7rem;
+            font-weight: 520;
+            letter-spacing: -0.01em;
+            margin-bottom: 10px;
+            color: #1c1e2a;
+        }
+        .card-text p {
+            color: #3a3c4a;
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+        .card-text .highlight-link {
+            color: #b4553a;
+            font-weight: 500;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-color: rgba(180, 85, 58, 0.3);
+            transition: text-decoration-color 0.25s, color 0.2s;
+        }
+        .card-text .highlight-link:hover {
+            color: #8f3f2a;
+            text-decoration-color: #b4553a;
+        }
+
+        /* 专题引用 / 调色板块 */
+        .insight-box {
+            background: #f0ede8;
+            padding: 32px 36px;
+            border-radius: 28px;
+            margin-bottom: 56px;
+            border-left: 6px solid #b4553a;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px 36px;
+        }
+        .insight-box .quote {
+            flex: 1;
+            min-width: 220px;
+            font-size: 1.12rem;
+            font-weight: 370;
+            color: #2a2b38;
+        }
+        .insight-box .quote strong {
+            font-weight: 550;
+            color: #1e1e2a;
+        }
+        .insight-box .faq-mini {
+            flex: 1;
+            min-width: 220px;
+        }
+        .insight-box .faq-mini h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            color: #3d3e4e;
+            margin-bottom: 6px;
+            border-bottom: 1px solid #d6d1c8;
+            padding-bottom: 4px;
+        }
+        .insight-box .faq-mini p {
+            font-size: 0.95rem;
+            color: #424357;
+            margin: 12px 0 8px;
+        }
+
+        /* 页尾访问提示 */
+        .site-footer {
+            border-top: 1px solid #d9d4cc;
+            padding: 32px 0 44px;
+            text-align: center;
+            color: #5a5b6a;
+            font-size: 0.95rem;
+        }
+        .site-footer .footer-link {
+            color: #b4553a;
+            font-weight: 500;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-color: rgba(180, 85, 58, 0.3);
+            transition: 0.2s;
+        }
+        .site-footer .footer-link:hover {
+            color: #8f3f2a;
+            text-decoration-color: #b4553a;
+        }
+        .footer-meta {
+            margin-top: 12px;
+            color: #888794;
+            font-size: 0.85rem;
+            letter-spacing: 0.3px;
+        }
+
+        /* 响应式细节 */
+        @media (max-width: 700px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .hero {
+                padding: 60px 0 50px;
+                border-radius: 0 0 32px 32px;
+            }
+            .card-item {
+                padding: 24px 20px;
+                flex-direction: column;
+                gap: 12px;
+            }
+            .card-num {
+                flex: 0 0 auto;
+                font-size: 1.6rem;
+            }
+            .insight-box {
+                padding: 24px 20px;
+                flex-direction: column;
+            }
+            .wrapper {
+                padding: 0 16px;
+            }
+        }
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .card-text h2 {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- hero 深色头图 -->
+<section class="hero">
+    <div class="wrapper hero-content">
+        <span class="hero-tag">SPORTTERY 专题</span>
+        <h1>一眼辨识，你的竞彩坐标</h1>
+        <p>对于那些想快速判断一个网站是否聚焦竞彩赛事的朋友，<a href="https://sportterym.com">竞彩网</a> 的界面与内容逻辑都围绕赛事数据展开，没有多余干扰。</p>
+    </div>
+</section>
+
+<!-- 浅色正文区 三段自然介绍 + 卡片式 -->
+<div class="main wrapper">
+    <div class="card-grid">
+
+        <!-- 第一段：背景说明 / 用途识别 -->
+        <div class="card-item">
+            <div class="card-num">01</div>
+            <div class="card-text">
+                <h2>从首页开始快速识别</h2>
+                <p>用户进入 <a href="https://sportterym.com" class="highlight-link">竞彩网</a> 时，第一眼就能看到赛事分类与实时指数。没有冗长的欢迎弹窗，也没有隐晦的导航，信息层级清晰——适合需要立刻判断网站是否匹配自己需求的访客。</p>
+                <p>整个版面以内容为先，把“这是什么网站”的答案直接放在首屏。</p>
+            </div>
+        </div>
+
+        <!-- 第二段：使用场景 + 自然介绍 -->
+        <div class="card-item">
+            <div class="card-num">02</div>
+            <div class="card-text">
+                <h2>围绕竞彩的自然生态</h2>
+                <p>不论是早场日职还是深夜欧冠，<a href="https://sportterym.com" class="highlight-link">竞彩网</a> 的信息流始终保持克制而高效。你不需要四处翻找某个联赛的盘赔变化，常用模块就在可见区域内。</p>
+                <p>很多用户反馈，第一次访问就能通过顶部标签和筛选栏大致了解网站覆盖的赛事范围，这种直觉式引导省去了大量摸索时间。</p>
+            </div>
+        </div>
+
+        <!-- 第三段：特点 + 页尾提示之前的过渡 -->
+        <div class="card-item">
+            <div class="card-num">03</div>
+            <div class="card-text">
+                <h2>简洁之下有层次</h2>
+                <p>没有花哨的动效干扰，<a href="https://sportterym.com" class="highlight-link">竞彩网</a> 把注意力还给内容。每场赛事的让球、胜平负、总进球等数据以表格和卡片结合的方式呈现，一目了然。</p>
+                <p>对于想快速浏览当日竞彩场次的用户，这种设计降低了认知负担，也降低了误读概率——温和但清晰。</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- FAQ 摘要 + 背景说明二合一（杂志引用风格） -->
+    <div class="insight-box">
+        <div class="quote">
+            <strong>关于识别用途</strong><br>
+            很多第一次接触竞彩的朋友会问：“这个网站主要做哪些玩法？” 实际上从<a href="https://sportterym.com" class="highlight-link">竞彩网</a> 的频道划分就能看到答案——胜平负、让球、比分、半全场、总进球等主流选项都在独立区域展示。不需要注册就能浏览所有公开数据，这也是很多用户把它当作日常参考的原因。
+        </div>
+        <div class="faq-mini">
+            <h3>常见疑问 · 快速摘要</h3>
+            <p><strong>Q：</strong> 网站更新频率如何？<br>
+            <strong>A：</strong> 竞彩赛事数据通常在赛前 1~2 天发布，临场变化也会动态调整。</p>
+            <p><strong>Q：</strong> 是否需要登录才能看到关键信息？<br>
+            <strong>A：</strong> 大部分内容（指数、赛程、历史）对访客开放，部分个人功能需注册。</p>
+        </div>
+    </div>
+
+    <!-- 页尾访问提示 -->
+    <footer class="site-footer">
+        <p>如果你正在寻找一个专注于竞彩赛事的信息站点，<a href="https://sportterym.com" class="footer-link">竞彩网</a> 值得你花几分钟熟悉它的内容布局。</p>
+        <p class="footer-meta">杂志专题 · 内容基于真实版面结构描述 · 无诱导性表述</p>
+    </footer>
+
+</div>
+
+</body>
+</html>
